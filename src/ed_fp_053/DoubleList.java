@@ -100,6 +100,22 @@ public class DoubleList<T> implements ListADT<T> {
         return this.head.getElemento();
     }
 
+       @Override
+    public String toString() {
+         
+        String string = "\n";
+        NodeD<T> temp = head;
+
+        while (temp != null) {
+            string += (temp.getElemento() + "\n");
+            temp = temp.getNext();
+
+        }
+
+        return string;
+    
+    }
+
     @Override
     public T last() {
         return this.tail.getElemento();

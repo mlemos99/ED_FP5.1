@@ -53,7 +53,20 @@ public class UnorderedList<T> extends DoubleList<T> implements UnorderedListADT<
 
     @Override
     public void addAfter(T element, T atual) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        NodeD<T> aux = head;
+        NodeD<T> temp = new NodeD<T>();
+        while (aux.getNext() != null) {
+            if (aux.getElemento().equals(atual)) {
+                temp.setLast(aux);
+                temp.setNext(aux.getNext());
+                temp.setElemento(element);
+                aux.getNext().setLast(temp);
+                aux.setNext(temp);
+                count++;
+                break;
+            } else {
+                aux = aux.getNext();
+            }
+        }
     }
-
 }
