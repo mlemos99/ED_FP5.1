@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ed_fp_05;
+package ed_fp_052;
 
+import ed_fp_05.*;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Utilizador
  */
-public class ED_FP_05 {
+public class ED_FP_052 {
 
     /**
      * @param args the command line arguments
@@ -25,14 +26,16 @@ public class ED_FP_05 {
         System.out.printf("Informe o número do teste: ");
         teste = ler.nextInt();
         
-        OrderedList<String> lista1 = new OrderedList();
+        UnorderedList lista1 = new UnorderedList();
 
         switch (teste) {
             case 0: //teste de ordenar alguns elementos
-                lista1.add("D");
-                lista1.add("B");
-                lista1.add("A");
-                lista1.add("C");
+                System.out.println(lista1.rear);
+                lista1.addToFront("D");
+                lista1.addToFront("B");
+                lista1.addToFront("A");
+                lista1.addToFront("C");
+                System.out.println(lista1.rear);
 
                 Iterator it = lista1.iterator();
 
@@ -44,11 +47,13 @@ public class ED_FP_05 {
                 break;
 
             case 1: //teste de ordenar com todos os elemtos do array ocupados
-                lista1.add("D");
-                lista1.add("B");
-                lista1.add("A");
-                lista1.add("C");
-                lista1.add("E");
+                lista1.addToRear("D");
+                lista1.addToRear("B");
+                lista1.addToRear("A");
+                lista1.addToRear("C");
+                lista1.addToRear("E");
+
+                lista1.addAfter("T", "A");
 
                 Iterator it2 = lista1.iterator();
 
@@ -59,13 +64,14 @@ public class ED_FP_05 {
                 break;
 
             case 2: //teste de ordenar com todos os elemtos do array ocupados mais um para fazer expandCapacity do array
-                lista1.add("D");
-                lista1.add("B");
-                lista1.add("A");
-                lista1.add("C");
-                lista1.add("E");
-                lista1.add("G");
-                lista1.add("F");
+                lista1.addToFront("D");
+                lista1.addToFront("B");
+                lista1.addToFront("A");
+                lista1.addToFront("C");
+                lista1.addToFront("E");
+                lista1.addToFront("G");
+                lista1.addToFront("F");
+                lista1.addAfter("T", "D");
 
                 Iterator it3 = lista1.iterator();
 
